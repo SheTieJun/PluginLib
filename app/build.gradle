@@ -47,42 +47,42 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
-
-EmailHelper {
-    emailFrom = "xxxxxxx@qq.com"
-    emailTo = "xxxxx@qq.com"
-    emailHost = "smtp.qq.com"
-    emailUser = "xxxxxx@qq.com"
-    emailPassword = "xxxxxxxx"
-    emailMessage = "这是测试"
-    emailTitle = "这是标题"
-    emailFile = "./多渠道模板.txt"
-}
-
-
-jiaGuHelper {
-    //加固相关的信息
-    isAssemble = false
-    //F:\Download-应用下载的目录\GoogleChome\360jiagubao_windows_64\jiagu\jiagu.jar 一定要具体到jar
-    reinforceJarFile = file("C://other/360jiagubao_windows_64/jiagu/jiagu.jar")
-    reinforceUsername = "xxxxxx"
-    reinforcePassword = "xxxxx"
-    inputApkFile = file("./jiaguapk/app-release.apk")
-    outputFile = file("./channels_1")
-    mulpkgFile = file("./channels.txt")
-}
+//
+//EmailHelper {
+//    emailFrom = "xxxxxxx@qq.com"
+//    emailTo = "xxxxx@qq.com"
+//    emailHost = "smtp.qq.com"
+//    emailUser = "xxxxxx@qq.com"
+//    emailPassword = "xxxxxxxx"
+//    emailMessage = "这是测试"
+//    emailTitle = "这是标题"
+//    emailFile = "./多渠道模板.txt"
+//}
 
 
-uploadPGYHelper {
-    key = "xxxxx"
-    apiKey = "xxxxx"
-    appName = "test.apk"
-    installType = 2
-    password = "123"
-    //钉钉，这里需要修改成自己的值
-    dingWebhook = "xxxxx"
-//    dingSecret= "打包机器人"
-    dingKey = "打包机器人"
-    title = "新版本APP上传完成(密码:$password)"
-    content = "体验新版本APP，请到蒲公英下载"
-}
+//jiaGuHelper {
+//    //加固相关的信息
+//    isAssemble = false
+//    //F:\Download-应用下载的目录\GoogleChome\360jiagubao_windows_64\jiagu\jiagu.jar 一定要具体到jar
+//    reinforceJarFile = file("C://other/360jiagubao_windows_64/jiagu/jiagu.jar")
+//    reinforceUsername = "xxxxxx"
+//    reinforcePassword = "xxxxx"
+//    inputApkFile = file("./jiaguapk/app-release.apk")
+//    outputFile = file("./channels_1")
+//    mulpkgFile = file("./channels.txt")
+//}
+//
+
+//uploadPGYHelper {
+//    key = "xxxxx"
+//    apiKey = "xxxxx"
+//    appName = "test.apk"
+//    installType = 2
+//    password = "123"
+//    //钉钉，这里需要修改成自己的值
+//    dingWebhook = "xxxxx"
+////    dingSecret= "打包机器人"
+//    dingKey = "打包机器人"
+//    title = "新版本APP上传完成(密码:$password)"
+//    content = "体验新版本APP，请到蒲公英下载"
+//}

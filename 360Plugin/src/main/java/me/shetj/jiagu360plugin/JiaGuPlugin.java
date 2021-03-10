@@ -17,7 +17,9 @@ class JiaGuPlugin implements Plugin<Project> {
     @Override
     public void apply(Project project) {
         JG360Extension customExtension = project.getExtensions().create(PLUGIN_EXTENSION_NAME, JG360Extension.class);
-
+        if (customExtension.reinforceJarFile == null){
+            return;
+        }
         //项目编译完成后，回调
         project.afterEvaluate(new Action<Project>() {
             @Override

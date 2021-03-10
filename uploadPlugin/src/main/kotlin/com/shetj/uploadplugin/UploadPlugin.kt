@@ -21,6 +21,9 @@ class UploadPlugin : Plugin<Project> {
             UploadExtension::class
         )
 
+        if (customExtension.apiKey == null) {
+            return
+        }
         //项目编译完成后，回调
         project.afterEvaluate {
             val appVariants: DomainObjectSet<ApplicationVariant> = (project
@@ -50,7 +53,10 @@ class UploadPlugin : Plugin<Project> {
                     if (customExtension.dingWebhook != null) {
                         //发送信息到webHook
                         val talkTask = project.tasks
-                            .create("UploadPGYAndDingTalkWith$variantName", SendMessageTask::class.java)
+                            .create(
+                                "UploadPGYAndDingTalkWith$variantName",
+                                SendMessageTask::class.java
+                            )
                         talkTask.init(variant, project)
                         talkTask.dependsOn(uploadTask);
                     }
