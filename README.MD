@@ -1,17 +1,25 @@
 ## 插件开发
+[![](https://jitpack.io/v/SheTieJun/PluginLib.svg)](https://jitpack.io/#SheTieJun/PluginLib)
 
 ### 插件1：打包上传到蒲公英后发送钉钉 
 
 [uploadPGY](uploadPlugin/README.MD)
-
-### 插件2：加固本地文件，或者打包后加固（地址必须一样）
+```
+com.github.SheTieJun.PluginLib:upload-pgy-plugin:-SNAPSHOT
+```
+### 插件2：加固本地文件，或者打包后加固
 
 [360JiaGu](360Plugin/Readme.MD)
+```
+com.github.SheTieJun.PluginLib:jg-360-plugin:-SNAPSHOT
+```
 
-
-### 插件3：邮件插件
+### 插件3：发送邮件
 
 [emailPlugin](emailPlugin/ReadMe.md)
+```
+com.github.SheTieJun.PluginLib:email-plugin:-SNAPSHOT
+```
 
 ### 开发注意事项：
 1. 用kotlin 开发的时候 ，注意task 需要使用open
