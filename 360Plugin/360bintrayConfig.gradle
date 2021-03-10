@@ -1,0 +1,20 @@
+ext.bintrayConfig = [
+        libName : "360JiaGu",
+        groupName : 'me.shetj.plugin',
+        versionName : '1.0.3',
+
+        siteUrl : 'hhttps://github.com/SheTieJun/PluginLibrary',
+        gitUrl : 'https://github.com/SheTieJun/PluginLibrary.git',
+        issueUrl : 'https://github.com/SheTieJun/PluginLibrary/issues',
+
+        developerId : 'shetiejun',
+        developerName : 'shetj',
+        developerEmail : 'tiejunshe@gmail.com',
+
+        pkgRepo : 'maven',
+        pkgIng : 'jar',
+        pkgDes : 'The Android Plugin for APK 360 jiagu',
+        pkgUserOrg : 'shetiejun'
+]
+
+apply from : "../bintray.gradle"

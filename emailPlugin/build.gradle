@@ -1,0 +1,13 @@
+apply plugin: 'java-library'
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api gradleApi()
+    api localGroovy()
+    implementation('javax.mail:mail:1.4.5')
+}
+
+apply from : "uploadLocal.gradle"
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"

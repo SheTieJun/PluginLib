@@ -1,0 +1,15 @@
+apply plugin: 'maven'
+
+group = 'me.shetj.plugin'
+version = '1.0.0'
+archivesBaseName = 'jg-360-plugin'
+
+//upload
+////本地上传
+
+uploadArchives {
+    repositories.mavenDeployer {
+        //http://localhost:8080/maven/
+        repository(url:uri('../maven/shetj'))
+    }
+}

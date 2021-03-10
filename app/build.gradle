@@ -1,0 +1,88 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+apply plugin: 'shetj.plugin.uploadpgy'
+apply plugin: 'shetj.plugin.jg360plugin'
+apply plugin: 'shetj.plugin.mail'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "me.shetj.plugindemo"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+EmailHelper {
+    emailFrom = "xxxxxxx@qq.com"
+    emailTo = "xxxxx@qq.com"
+    emailHost = "smtp.qq.com"
+    emailUser = "xxxxxx@qq.com"
+    emailPassword = "xxxxxxxx"
+    emailMessage = "这是测试"
+    emailTitle = "这是标题"
+    emailFile = "./多渠道模板.txt"
+}
+
+
+jiaGuHelper {
+    //加固相关的信息
+    isAssemble = false
+    //F:\Download-应用下载的目录\GoogleChome\360jiagubao_windows_64\jiagu\jiagu.jar 一定要具体到jar
+    reinforceJarFile = file("C://other/360jiagubao_windows_64/jiagu/jiagu.jar")
+    reinforceUsername = "xxxxxx"
+    reinforcePassword = "xxxxx"
+    inputApkFile = file("./jiaguapk/app-release.apk")
+    outputFile = file("./channels_1")
+    mulpkgFile = file("./channels.txt")
+}
+
+
+uploadPGYHelper {
+    key = "xxxxx"
+    apiKey = "xxxxx"
+    appName = "test.apk"
+    installType = 2
+    password = "123"
+    //钉钉，这里需要修改成自己的值
+    dingWebhook = "xxxxx"
+//    dingSecret= "打包机器人"
+    dingKey = "打包机器人"
+    title = "新版本APP上传完成(密码:$password)"
+    content = "体验新版本APP，请到蒲公英下载"
+}

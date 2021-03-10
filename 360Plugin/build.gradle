@@ -1,0 +1,21 @@
+plugins {
+    id 'java-library'
+}
+apply plugin: 'maven'
+
+dependencies {
+    api gradleApi()
+    api localGroovy()
+    api 'com.android.tools.build:gradle:4.0.1'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+    google()
+
+}
+
+
+apply from : "uploadLocal.gradle"
+//apply from : "360bintrayConfig.gradle"
