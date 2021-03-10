@@ -22,11 +22,11 @@ https://www.runoob.com/java/java-sending-email.html
  ```
  ```
  EmailHelper {
-     emailFrom = "375105540@qq.com"
-     emailTo = "3067252268@qq.com"
+     emailFrom = "xxxx@qq.com"
+     emailTo = "xxxxx@qq.com"
      emailHost = "smtp.qq.com"
-     emailUser = "375105540@qq.com"
-     emailPassword = "ccqwqdcnfddvcadd"
+     emailUser = "xxxx@qq.com"
+     emailPassword = "xxxxx"
      emailMessage = "这是测试"
      emailTitle = "这是标题"
      emailFile = "./多渠道模板.txt"
