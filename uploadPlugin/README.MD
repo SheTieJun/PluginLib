@@ -1,34 +1,20 @@
 ## 插件：上传到蒲公英
 
+1. 项目`build.gradle`
 ```
     repositories {
 
         maven{
-            url uri('file://F://maven/')
+            maven { url "https://jitpack.io" }
         }
     }
 
     dependencies {
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1' // Add this line
-        classpath 'me.shetj:upload-pgy-plugin:1.0.0'
-
+        classpath 'com.github.SheTieJun.PluginLib:upload-pgy-plugin:-SNAPSHOT'
     }
 ```
 
-```
-maven{
-        url 'https://dl.bintray.com/shetiejun/maven'
-    }
-```
-
-然后下载插件
-```
-classpath 'me.shetj.plugin:uploadPGY:1.0.0'
-```
-
-
-同时需要在app 下的`build.gradle`
-
+2. 同时需要在app 下的`build.gradle`
 ```
 apply plugin: 'shetj.plugin.uploadpgy'
 

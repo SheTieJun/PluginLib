@@ -10,22 +10,21 @@
  */
 
 ## 如何使用
-首先添加maven 地址
+1. 项目`build.gradle`
 ```
-maven{
-        url 'https://dl.bintray.com/shetiejun/maven'
+    repositories {
+
+        maven{
+            maven { url "https://jitpack.io" }
+        }
+    }
+
+    dependencies {
+        classpath 'com.github.SheTieJun.PluginLib:jg-360-plugin:-SNAPSHOT'
     }
 ```
 
-然后下载插件
-```
-classpath 'me.shetj.plugin:360JiaGu:1.0.2'
-```
-
-最后到 app -> build.gradle 使用 
-
-```
-apply plugin: 'shetj.plugin.jg360plugin'
+2. 同时需要在app 下的`build.gradle`
 ```
 
 ```
