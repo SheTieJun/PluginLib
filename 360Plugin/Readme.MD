@@ -20,7 +20,7 @@
     }
 
     dependencies {
-        classpath 'com.github.SheTieJun.PluginLib:jg-360-plugin:-SNAPSHOT'
+        classpath 'com.github.SheTieJun.PluginLib:360Plugin:-SNAPSHOT'
     }
 ```
 

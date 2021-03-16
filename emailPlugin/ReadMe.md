@@ -12,7 +12,7 @@ https://www.runoob.com/java/java-sending-email.html
     }
 
     dependencies {
-        classpath 'com.github.SheTieJun.PluginLib:email-plugin:-SNAPSHOT'
+        classpath 'com.github.SheTieJun.PluginLib:emailPlugin:-SNAPSHOT'
     }
 ```
 

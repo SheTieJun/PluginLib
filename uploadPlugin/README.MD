@@ -10,7 +10,7 @@
     }
 
     dependencies {
-        classpath 'com.github.SheTieJun.PluginLib:upload-pgy-plugin:-SNAPSHOT'
+        classpath 'com.github.SheTieJun.PluginLib:uploadPlugin:-SNAPSHOT'
     }
 ```
 

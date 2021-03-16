@@ -1,3 +1,4 @@
+include ':AspectJPlugin'
 include ':emailPlugin'
 include('360Plugin')
 include('uploadPlugin')
