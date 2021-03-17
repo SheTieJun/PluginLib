@@ -5,20 +5,20 @@
 
 [uploadPGY](uploadPlugin/README.MD)
 ```
-com.github.SheTieJun.PluginLib:upload-pgy-plugin:-SNAPSHOT
+com.github.SheTieJun.PluginLib:uploadPlugin:-SNAPSHOT
 ```
 ### 插件2：加固本地文件，或者打包后加固
 
 [360JiaGu](360Plugin/Readme.MD)
 ```
-com.github.SheTieJun.PluginLib:jg-360-plugin:-SNAPSHOT
+com.github.SheTieJun.PluginLib:360Plugin:-SNAPSHOT
 ```
 
 ### 插件3：发送邮件
 
 [emailPlugin](emailPlugin/ReadMe.md)
 ```
-com.github.SheTieJun.PluginLib:email-plugin:-SNAPSHOT
+com.github.SheTieJun.PluginLib:emailPlugin:-SNAPSHOT
 ```
 
 ### 开发注意事项：
