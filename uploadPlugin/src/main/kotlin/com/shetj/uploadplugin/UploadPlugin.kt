@@ -5,8 +5,6 @@ import com.android.build.gradle.api.ApplicationVariant
 import org.gradle.api.DomainObjectSet
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.create
-
 
 class UploadPlugin : Plugin<Project> {
 
@@ -18,7 +16,7 @@ class UploadPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         val customExtension: UploadExtension = project.extensions.create(
             PLUGIN_EXTENSION_NAME,
-            UploadExtension::class
+            UploadExtension::class.java
         )
 
         if (customExtension.apiKey == null) {

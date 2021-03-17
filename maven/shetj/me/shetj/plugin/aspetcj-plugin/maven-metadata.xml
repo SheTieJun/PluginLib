@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
   <groupId>me.shetj.plugin</groupId>
-  <artifactId>email-plugin</artifactId>
+  <artifactId>aspetcj-plugin</artifactId>
   <versioning>
     <release>1.0.0</release>
     <versions>

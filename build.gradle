@@ -17,6 +17,7 @@ buildscript {
         classpath "me.shetj.plugin:email-plugin:$plugin_version"
         classpath "me.shetj.plugin:jg-360-plugin:$plugin_version"
         classpath "me.shetj.plugin:upload-pgy-plugin:$plugin_version"
+        classpath "me.shetj.plugin:aspetcj-plugin:$plugin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

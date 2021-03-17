@@ -12,7 +12,6 @@ import java.io.File
 class AspectJPlugin : Plugin<Project> {
 
     override fun apply(project: Project) {
-        println("Aspectj切片开始编织Class!")
         val appExtension = project
             .extensions.findByName("android") as? AppExtension
         val appVariants = appExtension?.applicationVariants
@@ -29,11 +28,11 @@ class AspectJPlugin : Plugin<Project> {
                     add(type, "org.aspectj:aspectjrt:1.9.6")
                 }
             }
-
             val javaCompileProvider = variant.javaCompileProvider
             javaCompileProvider.get().doLast { javaCompile ->
                 javaCompile as JavaCompile
-                arrayOf(
+                val logger = javaCompile.logger
+                val arrayOf = arrayOf(
                     "-showWeaveInfo",
                     "-1.8",
                     "-inpath",
@@ -43,18 +42,20 @@ class AspectJPlugin : Plugin<Project> {
                     "-d",
                     javaCompile.destinationDir.toString(),
                     "-classpath",
-                    javaCompile.classpath.toString(),
+                    javaCompile.classpath.asPath,
                     "-bootclasspath",
                     appExtension.bootClasspath.joinToString(File.pathSeparator)
                 )
-
                 val handler = MessageHandler(true)
-                Main().run(null, handler)
-                val logger = javaCompile.logger
+                print(" 开始执行AspectJ")
+                val main = Main()
+                Main().run(arrayOf, handler) // 关键句子执行AOP
+                println(" 结束AspectJ")
                 handler.getMessages(null, true).forEach { msg ->
                     when (msg.kind) {
                         IMessage.ABORT, IMessage.ERROR, IMessage.FAIL -> {
                             logger.error(msg.message, msg.thrown)
+                            main.quit()
                         }
                         IMessage.WARNING -> {
                             logger.warn(msg.message, msg.thrown)

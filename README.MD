@@ -5,21 +5,27 @@
 
 [uploadPGY](uploadPlugin/README.MD)
 ```
-com.github.SheTieJun.PluginLib:uploadPlugin:-SNAPSHOT
+classpath com.github.SheTieJun.PluginLib:uploadPlugin:-SNAPSHOT
 ```
 ### 插件2：加固本地文件，或者打包后加固
 
 [360JiaGu](360Plugin/Readme.MD)
 ```
-com.github.SheTieJun.PluginLib:360Plugin:-SNAPSHOT
+classpath com.github.SheTieJun.PluginLib:360Plugin:-SNAPSHOT
 ```
 
 ### 插件3：发送邮件
 
 [emailPlugin](emailPlugin/ReadMe.md)
 ```
-com.github.SheTieJun.PluginLib:emailPlugin:-SNAPSHOT
+classpath com.github.SheTieJun.PluginLib:emailPlugin:-SNAPSHOT
 ```
+
+### 插件4：[AspectJ 集成插件](AspectJPlugin/README.MD)
+```
+classpath com.github.SheTieJun.PluginLib:AspectJPlugin:-SNAPSHOT
+```
+
 
 ### 开发注意事项：
 1. 用kotlin 开发的时候 ，注意task 需要使用open

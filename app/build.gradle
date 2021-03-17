@@ -6,6 +6,7 @@ plugins {
 apply plugin: 'shetj.plugin.uploadpgy'
 apply plugin: 'shetj.plugin.jg360plugin'
 apply plugin: 'shetj.plugin.mail'
+apply plugin: 'shetj.plugin.aspectj'
 
 android {
     compileSdkVersion 30
