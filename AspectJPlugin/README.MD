@@ -1,7 +1,7 @@
 ## AspectJ Gradle 插件
 #### 缺点
 1. 目前不支持Kotlin
-2. 不支持编译特点文件
+2. 不支持编译特定文件，如果文件太多会导致编译时间过长
 3. 当出现错误情况的是，可能导致AspectJTools 没有退出,需要退出程序
 
 ### 集成
@@ -47,7 +47,7 @@ implementation 'org.aspectj:aspectjrt:1.9.6'
 
 
 #### 查看文件生成位置
-[编译生成文件](/app/build/intermediates/javac)
+[编译生成文件](/app/build/intermediates/javac)：/app/build/intermediates/javac
 
 
 
