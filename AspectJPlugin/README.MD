@@ -51,4 +51,14 @@ implementation 'org.aspectj:aspectjrt:1.9.6'
 
 
 
-## 待测试
+### 测试结果
+1. Java 成功了
+2. Kotlin 失败了，暂时没有原因
+
+
+### 建议使用下面这个大佬的库
+1. 同时支持Java/Kotlin
+2. 支持只编译特定的包名文件，减少编译时间
+[gradle_plugin_android_aspectjx](https://github.com/HujiangTechnology/gradle_plugin_android_aspectjx)
+
+![](16b0bb99bf14152b.jpg)

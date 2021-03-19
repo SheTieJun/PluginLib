@@ -3,25 +3,25 @@
 
 ### 插件1：打包上传到蒲公英后发送钉钉 
 
-[uploadPGY](uploadPlugin/README.MD)
+[uploadPGY](uploadPlugin)
 ```
 classpath com.github.SheTieJun.PluginLib:uploadPlugin:-SNAPSHOT
 ```
 ### 插件2：加固本地文件，或者打包后加固
 
-[360JiaGu](360Plugin/Readme.MD)
+[360JiaGu](360Plugin)
 ```
 classpath com.github.SheTieJun.PluginLib:360Plugin:-SNAPSHOT
 ```
 
 ### 插件3：发送邮件
 
-[emailPlugin](emailPlugin/ReadMe.md)
+[emailPlugin](emailPlugin)
 ```
 classpath com.github.SheTieJun.PluginLib:emailPlugin:-SNAPSHOT
 ```
 
-### 插件4：[AspectJ 集成插件](AspectJPlugin/README.MD)
+### 插件4：[AspectJ 集成插件](AspectJPlugin)
 ```
 classpath com.github.SheTieJun.PluginLib:AspectJPlugin:-SNAPSHOT
 ```
