@@ -1,6 +1,7 @@
 ## AspectJ Gradle 插件
+
 #### 缺点
-1. 目前不支持Kotlin
+1. ~~目前不支持Kotlin~~    【已完成】
 2. 不支持编译特定文件，如果文件太多会导致编译时间过长
 3. 当出现错误情况的是，可能导致AspectJTools 没有退出,需要退出程序
 
@@ -36,10 +37,19 @@ apply plugin: 'shetj.plugin.aspectj'
 ```
 
 
-#### 查看文件生成位置
-[编译生成文件](/app/build/intermediates/javac)：/app/build/intermediates/javac
+#### 查看文件生成位置 ：新的方式是通过transform
+[编译生成文件](/app/build/intermediates/transforms/)：/app/build/intermediates/transforms/AspectJPlugin
 
 
+
+
+
+#### AspectJ编译时期
+**编译时织入**，利用ajc编译器替代javac编译器，直接将源文件(java或者aspect文件)编译成class文件并将切面织入进代码。
+
+**编译后织入**，利用ajc编译器向javac编译期编译后的class文件或jar文件织入切面代码。
+
+**加载时织入**，不使用ajc编译器，利用aspectjweaver.jar工具，使用java agent代理在类加载期将切面织入进代码。
 
 ### 测试结果
 1. Java 成功了
@@ -56,3 +66,11 @@ apply plugin: 'shetj.plugin.aspectj'
 
   
 ![](16b0bb99bf14152b.jpg)
+
+
+
+### 更新日志
+1. 2021年4月9日：支持kotlin 【已完成】
+
+
+
