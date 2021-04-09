@@ -28,9 +28,13 @@ class TransformAspectJ : Transform {
 
     /**
      * PROJECT: 只有项目内容
+     *
      * SUB_PROJECTS: 只有子项目
+     *
      * EXTERNAL_LIBRARIES: 只有外部库
+     *
      * TESTED_CODE: 测试代码
+     *
      * PROVIDED_ONLY: 只提供本地或远程依赖项
      */
     override fun getScopes() = mutableSetOf(QualifiedContent.Scope.PROJECT)
@@ -86,12 +90,13 @@ class TransformAspectJ : Transform {
         if (!output.exists()) {
             FileUtils.mkdirs(output)
         }
-        val input = mutableListOf<File>()
-        val classPath = mutableListOf<File>()
-        val aspectPath = mutableListOf<File>()
+        val input = mutableListOf<File>()  //需要处理的.class
+        val classPath = mutableListOf<File>() //指定在何处查找用户类文件,class和source 的位置: classpath 的作用是在当解析一个类的时候，当这个类是不在inpath 中，会从classpath 中寻找。
+        val aspectPath = mutableListOf<File>() //将jar文件和目录中的二进制文件编织到所有源中:定义了切面规则的class
         invocation.inputs.forEach { source ->
             //处理源码文件
             source.directoryInputs.forEach { dir ->
+                print("${dir.name}")
                 input.add(dir.file)
                 classPath.add(dir.file)
             }
@@ -99,6 +104,7 @@ class TransformAspectJ : Transform {
 
             //处理jar
             source.jarInputs.forEach { jar ->
+                print("${jar.name}")
                 input.add(jar.file)
                 classPath.add(jar.file)
             }
@@ -110,10 +116,12 @@ class TransformAspectJ : Transform {
         invocation.referencedInputs.forEach { source ->
             //处理源码文件
             source.directoryInputs.forEach { dir ->
+                print("${dir.name}")
                 classPath.add(dir.file)
             }
             //处理jar
             source.jarInputs.forEach { jar ->
+                print("${jar.name}")
                 classPath.add(jar.file)
                 aspectPath.add(jar.file)
             }
@@ -135,9 +143,9 @@ class TransformAspectJ : Transform {
         println("::isIncremental:   $isIncremental")
         println(if (runInAProcess) ":: weaving in a process..." else ":: weaving...")
         println(":: boot class path:  $bootClassPath")
-        println(":: class path:       $classPath")
-        println(":: aspect path:      $aspectPath")
-        println(":: input:            $input")
+        println(":: 指定在何处查找:class path:       $classPath")//指定在何处查找用户类文件,class和source 的位置: classpath 的作用是在当解析一个类的时候，当这个类是不在inpath 中，会从classpath 中寻找。
+        println(":: 定义了切面规则的class:aspect path:      $aspectPath") //将jar文件和目录中的二进制文件编织到所有源中:定义了切面规则的class
+        println(":: 需要处理的: input:            $input") //需要处理的.class
         println(":: output:           $output")
 
         val arguments = listOf(

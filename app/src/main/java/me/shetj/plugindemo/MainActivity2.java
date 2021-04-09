@@ -28,4 +28,9 @@ public class MainActivity2 extends AppCompatActivity {
     void test(){
 
     }
+
+    @SingleClick(value = 5000L)
+    void test2(){
+
+    }
 }

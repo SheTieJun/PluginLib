@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     @SingleClick(value = 5000)
     fun onClick(v: View) {
-        Toast.makeText(this, "这是：${System.currentTimeMillis()}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "这是：${System.currentTimeMillis()}ssssss", Toast.LENGTH_SHORT).show()
     }
+
 }

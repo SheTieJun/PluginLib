@@ -50,10 +50,18 @@ apply plugin: 'shetj.plugin.aspectj'
 **编译后织入**，利用ajc编译器向javac编译期编译后的class文件或jar文件织入切面代码。
 
 **加载时织入**，不使用ajc编译器，利用aspectjweaver.jar工具，使用java agent代理在类加载期将切面织入进代码。
+```
+  -showWeaveInfo，输出编织过程信息
+  -1.5 设置规范1.5，匹配java1.5
+  -inpath class文件目录或者jar包， 源字节码，需要处理的类
+  -aspectpath  定义的切面类
+  -d 存放编辑产生的class文件
+  -classpath ，所有class文件，源class，java包，编织时需要用到的一些处理类
+```
+
 
 ### 测试结果
-1. Java 成功了
-2. Kotlin 失败了，暂时没有原因
+1. Java 、 Kotlin 都通过
 
 ### 建议使用下面这个大佬的库
 
